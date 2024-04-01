@@ -39,6 +39,7 @@ async function onFormSubmit(event) {
     const data = await getImages(userQuery, pageNumber);
     if (data.totalHits === 0) {
       loader.style.display = 'none';
+      hideLoadMore();
       iziToast.info({
         title: 'Info',
         message:
