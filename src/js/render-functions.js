@@ -10,8 +10,8 @@ let lightbox = new SimpleLightbox('.gallery a', {
 
 const gallery = document.querySelector('.gallery');
 
-function cardTemplate (obj) {
-return `<li class="gallery-item">
+function cardTemplate(obj) {
+  return `<li class="gallery-item">
 <div class="image-card">
 <a class="gallery-link" href="${obj.largeImageURL}">
 <img 
@@ -45,19 +45,17 @@ alt="${obj.tags}"/>
 </div>
 </a>
 </div>
-</li>`
-};
+</li>`;
+}
 
-function galleryTemplate(arr){
+function galleryTemplate(arr) {
   return arr.map(cardTemplate).join('');
-};
-
+}
 
 export function renderGallery(images) {
   const markup = galleryTemplate(images);
   gallery.insertAdjacentHTML('beforeend', markup);
-  
+
   lightbox.on('show.simplelightbox', function () {});
   lightbox.refresh();
-};
-
+}
