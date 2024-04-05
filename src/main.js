@@ -53,6 +53,7 @@ async function onFormSubmit(event) {
     renderGallery(data.hits);
   } catch (error) {
     loader.style.display = 'none';
+    hideLoadMore();
     iziToast.error({
       title: 'Error',
       message: 'Failed to fetch images. Please try again later.',

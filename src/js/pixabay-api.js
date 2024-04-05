@@ -17,8 +17,7 @@ export async function getImages(userQuery, pageNumber) {
     per_page: 15,
     page: pageNumber,
   };
-  const headers = {};
-
-  const response = await axios.get(url, { params, headers });
+  
+  const response = await axios.get(url, { params });
   return response.data;
 }
